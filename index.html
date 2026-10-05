@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>研究問卷首頁</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:linear-gradient(160deg,#eef2f9 0%,#f7f9fc 55%,#eef2f9 100%);
+    min-height:100vh;padding:40px 16px 64px;
+    font-family:"Noto Sans TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:#1f2937;line-height:1.8;-webkit-font-smoothing:antialiased;
+  }
+  .card{max-width:760px;margin:0 auto;background:#fff;border-radius:18px;
+        box-shadow:0 10px 40px rgba(31,41,55,.08);padding:44px 40px}
+  .badge{display:inline-block;background:#e4e7fb;color:#4c53b4;font-size:13px;
+         font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:.5px}
+  h1{font-size:30px;font-weight:800;margin:18px 0 22px;letter-spacing:-.5px}
+  p{margin:0 0 16px;font-size:15.5px}
+  .box{background:#f3f5f9;border-radius:12px;padding:22px 24px;margin:0 0 18px}
+  .box h2{font-size:17px;font-weight:700;margin:0 0 12px}
+  .box p{margin:0 0 8px;font-size:15px}
+  .box p:last-child{margin-bottom:0}
+  .box ul{margin:4px 0 0 20px;font-size:15px}
+  .box li{margin-bottom:7px}
+  .box li:last-child{margin-bottom:0}
+  .hl{font-weight:700;color:#1f2937}
+  .consent{display:flex;align-items:flex-start;gap:11px;margin:26px 0 20px;font-size:15.5px}
+  .consent input{width:19px;height:19px;margin-top:4px;cursor:pointer;accent-color:#4c53b4;flex-shrink:0}
+  .consent label{cursor:pointer}
+  button{background:#4c53b4;color:#fff;border:0;border-radius:9px;
+         padding:13px 34px;font-size:16px;font-weight:700;cursor:pointer;
+         font-family:inherit;transition:background .15s}
+  button:hover:not(:disabled){background:#3f4699}
+  button:disabled{background:#d5d8e0;color:#8f94a3;cursor:not-allowed}
+  .hint{margin-top:14px;font-size:14px;color:#4c53b4}
+  .hint.done{visibility:hidden}
+  @media (max-width:560px){
+    body{padding:24px 12px 48px}
+    .card{padding:30px 22px;border-radius:14px}
+    h1{font-size:25px}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="badge">研究問卷</span>
+  <h1>歡迎參與本學術研究</h1>
+
+  <p>您好，感謝您的熱心參與。本問卷為一項學術研究，目的是為了解使用者在生成式 AI 工具中「被迫開啟新對話視窗」時的資訊評估與個人感受。</p>
+
+  <p>您的填答對我們的研究非常重要，請按您的真實狀況與感受作答。您所填寫的任何資料僅用於學術成果報告，絕對保密，不會將您的個人資料洩漏予第三人，也不會移作任何商業使用，未來分析結果將以集體數據方式呈現。</p>
+
+  <div class="box">
+    <h2>參與資格</h2>
+    <p>本研究的對象限定為<span class="hl">曾經使用過生成式 AI 工具（例如 ChatGPT、Gemini、Claude 等）</span>的使用者。若您尚未使用過這類工具，本次問卷可能不適合您填答。</p>
+  </div>
+
+  <div class="box">
+    <h2>研究聯絡資訊</h2>
+    <p>指導教授：國立中山大學資訊管理學系李怡珍 博士</p>
+    <p>研究生：陳立寰（x69toki@gmail.com）</p>
+  </div>
+
+  <div class="box">
+    <h2>問卷說明</h2>
+    <p>本問卷填答時間不設限，請依個人速度安心填答。</p>
+    <p>為感謝您的撥冗參與，凡完整填答且經確認為有效問卷者，將可參加抽獎，抽出 <span class="hl">40 名</span>致贈新台幣 <span class="hl">100 元</span>超商禮券。</p>
+  </div>
+
+  <div class="box">
+    <h2>問卷流程與步驟</h2>
+    <p>本研究請您閱讀一組使用生成式 AI 的情境畫面，進行步驟如下：</p>
+    <ul>
+      <li>第一步驟：閱讀情境前提，了解您在情境中的身分與任務。</li>
+      <li>第二步驟：請專注閱讀「原對話視窗」的畫面內容，包含任務要求、目前進度與系統提示。</li>
+      <li>第三步驟：請專注閱讀「新對話視窗的任務摘要」畫面內容。</li>
+      <li>第四步驟：依照您的感受與判斷回答問項，最後填寫個人基本資料。</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>填答提醒</h2>
+    <p><span class="hl">建議使用電腦或平板作答，手機作答的字體因系統限制會較小。</span></p>
+    <p>為確保資料品質，填答時請盡量專注，並避免中途離開或切換頁面。閱讀完本頁面後，即可正式開始。</p>
+  </div>
+
+  <div class="consent">
+    <input type="checkbox" id="agree">
+    <label for="agree">我已閱讀上述說明，並同意參與本研究。</label>
+  </div>
+
+  <button id="startBtn" disabled>開始作答</button>
+  <p class="hint" id="hint">請先勾選同意參與研究。</p>
+</div>
+
+<script>
+  var FORMS = [
+    'https://docs.google.com/forms/d/e/1FAIpQLScF_FYyFcaY9G6BsHv66zNLUtVEUlsmmSQUZQqIvKhWwjjmvw/viewform',
+    'C2_FORM_URL',
+    'C3_FORM_URL',
+    'C4_FORM_URL'
+  ];
+
+  var agree = document.getElementById('agree');
+  var btn   = document.getElementById('startBtn');
+  var hint  = document.getElementById('hint');
+
+  agree.addEventListener('change', function () {
+    btn.disabled = !agree.checked;
+    hint.className = agree.checked ? 'hint done' : 'hint';
+  });
+
+  btn.addEventListener('click', function () {
+    if (!agree.checked) return;
+    var pool = FORMS.filter(function (u) { return u.indexOf('http') === 0; });
+    window.location.href = pool[Math.floor(Math.random() * pool.length)];
+  });
+</script>
+</body>
+</html>
