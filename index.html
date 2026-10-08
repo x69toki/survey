@@ -104,9 +104,8 @@
 
 <script>
   // 分派器（Google Apps Script 網頁應用程式）
-  // 採區塊隨機化：每 4 人一個區塊，區塊內四組順序隨機洗牌，
-  // 因此四組人數平均，且受試者被分到哪一組仍為隨機。
-  // 以 JSONP 取得分派結果後，由本頁自行轉址（Apps Script 在 iframe 內無法自行跳轉）。
+  // 區塊隨機化＋依實際回收份數補足：四組都收滿目標份數後會顯示額滿。
+  // 以 JSONP 取得分派結果後由本頁轉址（Apps Script 在 iframe 內無法自行跳轉）。
   var ASSIGN_URL = 'https://script.google.com/macros/s/AKfycbyD99vMtm5u-Tr45IBrbKY-X4R9s4bu-H8_M0YYs6sXE0BRtDuMGQF5v9uo-vzVzIBIWQ/exec';
 
   var agree = document.getElementById('agree');
@@ -129,7 +128,11 @@
     window[cbName] = function (res) {
       if (done) return;
       done = true;
-      if (res && res.url) {
+      if (res && res.full) {
+        btn.style.display = 'none';
+        hint.className = 'hint';
+        hint.innerHTML = '<strong>本次問卷收集已額滿，感謝您的參與。</strong>';
+      } else if (res && res.url) {
         window.location.href = res.url;
       } else {
         fail('分派失敗，請重新整理頁面後再試一次。');
